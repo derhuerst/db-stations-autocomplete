@@ -1,0 +1,36 @@
+{
+	"name": "db-stations-autocomplete",
+	"description": "Search for stations of DB.",
+	"version": "1.0.0",
+	"main": "index.js",
+	"files": [
+		"index.js"
+	],
+	"keywords": [
+		"db",
+		"deutsche bahn",
+		"stations",
+		"autocomplete",
+		"search",
+		"berlin",
+		"public transport",
+		"open data"
+	],
+	"author": "Jannis R <mail@jannisr.de>",
+	"homepage": "https://github.com/derhuerst/db-stations-autocomplete",
+	"repository": "git://github.com/derhuerst/db-stations-autocomplete.git",
+	"license": "ISC",
+	"engines": {
+		"node": ">=6"
+	},
+	"dependencies": {
+	},
+	"devDependencies": {
+	},
+	"scripts": {
+		"build": "node ./build.js",
+		"test": "node test.js | tap-min",
+		"benchmark": "node benchmark.js",
+		"prepublishOnly": "npm run build && npm test"
+	}
+}
