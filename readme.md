@@ -1,5 +1,7 @@
 # db-stations-autocomplete
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/derhuerst/db-stations-autocomplete.svg)](https://greenkeeper.io/)
+
 *db-stations-autocomplete* provides a **stations search for [Deutsche Bahn](https://en.wikipedia.org/wiki/Deutsche_Bahn)**. It pulls its data from [`db-stations`](https://github.com/derhuerst/db-stations).
 
 [![npm version](https://img.shields.io/npm/v/db-stations-autocomplete.svg)](https://www.npmjs.com/package/db-stations-autocomplete)
