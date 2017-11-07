@@ -4,7 +4,10 @@
 	"version": "1.0.0",
 	"main": "index.js",
 	"files": [
-		"index.js"
+		"index.js",
+		"stations.json",
+		"tokens.json",
+		"scores.json"
 	],
 	"keywords": [
 		"db",
@@ -26,6 +29,8 @@
 	"dependencies": {
 	},
 	"devDependencies": {
+		"db-stations": "^1.23.0",
+		"tokenize-db-station-name": "^1.0.0"
 	},
 	"scripts": {
 		"build": "node ./build.js",
