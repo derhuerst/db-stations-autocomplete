@@ -33,6 +33,7 @@
 		"tokenize-db-station-name": "^1.0.0"
 	},
 	"devDependencies": {
+		"benchmark": "^2.1.4",
 		"db-stations": "^1.23.0"
 	},
 	"scripts": {

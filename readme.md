@@ -75,7 +75,20 @@ This returns stations in the [*Friendly Public Transport Format*](https://github
 } ]
 ```
 
-If you set `fuzzy` to `true`, words with a [Levenshtein distance](https://en.wikipedia.org/wiki/Levenshtein_distance) `<= 3` will be taken into account.
+If you set `fuzzy` to `true`, words with a [Levenshtein distance](https://en.wikipedia.org/wiki/Levenshtein_distance) `<= 3` will be taken into account. This is a lot slower though:
+
+test | performance
+-----|------------
+non-fuzzy – `berlin charlottenburg` | 661 ops/sec
+fuzzy – `berlin charlottenbrug` (note the typo) | 128 ops/sec
+
+
+Setting `completion` to `false` speeds things up:
+
+test | performance
+-----|------------
+completion – `Münc Hbf` | 17117 ops/sec
+no completion – `Münc Hbf` | 638 ops/sec
 
 
 ## Contributing
