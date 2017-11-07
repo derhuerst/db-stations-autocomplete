@@ -27,10 +27,13 @@
 		"node": ">=6"
 	},
 	"dependencies": {
+		"hifo": "^0.7.0",
+		"leven": "^2.1.0",
+		"lodash.maxby": "^4.6.0",
+		"tokenize-db-station-name": "^1.0.0"
 	},
 	"devDependencies": {
-		"db-stations": "^1.23.0",
-		"tokenize-db-station-name": "^1.0.0"
+		"db-stations": "^1.23.0"
 	},
 	"scripts": {
 		"build": "node ./build.js",
