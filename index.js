@@ -19,7 +19,7 @@ const tokensByFragment = (fragment, completion, fuzzy) => {
 		const relevance = 1 + scores[fragment] + Math.sqrt(fragment.length)
 
 		for (let id of tokens[fragment]) {
-			if (!results[id] || !results[id] < relevance) {
+			if (!results[id] || !results[id] > relevance) {
 				results[id] = relevance
 			}
 		}
@@ -40,7 +40,7 @@ const tokensByFragment = (fragment, completion, fuzzy) => {
 			} else continue
 
 			for (let id of tokens[t]) {
-				if (!results[id] || !results[id] < relevance) {
+				if (!results[id] || !results[id] > relevance) {
 					results[id] = relevance
 				}
 			}
@@ -68,18 +68,18 @@ const autocomplete = (query, limit = 6, fuzzy = false, completion = true) => {
 		return r
 	}
 
-	const results = {}
+	const results = Object.create(null)
 	for (let fragment in data) {
 		for (let id in data[fragment]) {
+			if (id in results) continue
+
 			const relevance = totalRelevance(id)
 			if (relevance === false) continue
 
 			const station = stations[id]
 			const score = relevance * Math.pow(station.w, 1/3)
 
-			if (!results[id] || results[id].score < score) {
-				results[id] = {id, relevance, score}
-			}
+			results[id] = {id, relevance, score}
 		}
 	}
 
