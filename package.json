@@ -36,7 +36,6 @@
 		"benchmark": "^2.1.4",
 		"db-stations": "^2.0.0",
 		"lodash.sortby": "^4.7.0",
-		"sandboxed-module": "^2.0.3",
 		"tap-min": "^1.2.2",
 		"tape": "^4.8.0"
 	},
