@@ -2,5 +2,5 @@
 
 const autocomplete = require('.')
 
-console.log(autocomplete('burg'))
-// console.log(autocomplete('u mehrigndamm', 3, true)) // typo
+console.log(autocomplete('Münch', 3))
+// console.log(autocomplete('Frankfrut Hbf', 3, true)) // typo

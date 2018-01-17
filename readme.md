@@ -18,60 +18,32 @@ npm install db-stations-autocomplete
 ## Usage
 
 ```js
-autocomplete(query, limit = 6, fuzzy = false, completion = true)
+autocomplete(query, results = 3, fuzzy = false, completion = true)
 ```
 
 ```javascript
-const autocomplete = require('db-stations-autocomplete')
-
-autocomplete('burg')
+const autocomplete = require('vbb-stations-autocomplete')
+autocomplete('Münch', 3)
 ```
 
-This returns stations in the [*Friendly Public Transport Format*](https://github.com/public-transport/friendly-public-transport-format).
+This returns stations in a reduced form of the [*Friendly Public Transport Format*](https://github.com/public-transport/friendly-public-transport-format). To get all details, pass use [`db-stations`](https://github.com/derhuerst/db-stations).
 
 ```javascript
 [ {
-	type: 'station',
-	id: '8001156',
-	name: 'Bremen-Burg',
-	weight: 162.4,
-	relevance: 1.891765,
-	score: 10.321176253764524
+	id: '8000261', // München Hbf
+	relevance: 0.8794466403162056,
+	score: 11.763480191996974,
+	weight: 2393.2
 }, {
-	type: 'station',
-	id: '8001289',
-	name: 'Burgkunstadt',
-	weight: 64.3,
-	relevance: 2.2942733333333334,
-	score: 9.191410194818323
+	id: '8004128', // München Donnersbergerbrücke
+	relevance: 0.8794466403162056,
+	score: 9.235186720706798,
+	weight: 1158
 }, {
-	type: 'station',
-	id: '8011297',
-	name: 'Burgstädt',
-	weight: 56.1,
-	relevance: 2.36094,
-	score: 9.038004862508393
-}, {
-	type: 'station',
-	id: '8001297',
-	name: 'Burgthann',
-	weight: 36.5,
-	relevance: 2.4053845,
-	score: 7.979005900307141
-}, {
-	type: 'station',
-	id: '8001285',
-	name: 'Burgheim',
-	weight: 25.6,
-	relevance: 2.46094,
-	score: 7.252944381011258
-}, {
-	type: 'station',
-	id: '8011296',
-	name: 'Burgkemnitz',
-	weight: 26.5,
-	relevance: 2.3245763636363637,
-	score: 6.930412885835083
+	id: '8004132', // München Karlsplatz
+	relevance: 0.8794466403162056,
+	score: 9.144716179768407,
+	weight: 1124.3
 } ]
 ```
 
@@ -79,16 +51,16 @@ If you set `fuzzy` to `true`, words with a [Levenshtein distance](https://en.wik
 
 test | performance
 -----|------------
-non-fuzzy – `berlin charlottenburg` | 661 ops/sec
-fuzzy – `berlin charlottenbrug` (note the typo) | 128 ops/sec
+non-fuzzy – `berlin charlottenburg` | 626 ops/sec
+fuzzy – `berlin charlottenbrug` (note the typo) | 108 ops/sec
 
 
 Setting `completion` to `false` speeds things up:
 
 test | performance
 -----|------------
-completion – `Münc Hbf` | 17117 ops/sec
-no completion – `Münc Hbf` | 638 ops/sec
+completion – `Münc Hbf` | 592 ops/sec
+no completion – `Münc Hbf` | 12635 ops/sec
 
 
 ## Contributing
