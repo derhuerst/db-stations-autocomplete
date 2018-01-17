@@ -5,9 +5,11 @@
 	"main": "index.js",
 	"files": [
 		"index.js",
-		"stations.json",
+		"original-ids.json",
 		"tokens.json",
-		"scores.json"
+		"scores.json",
+		"weights.json",
+		"nr-of-tokens.json"
 	],
 	"keywords": [
 		"db",
@@ -34,9 +36,10 @@
 	},
 	"devDependencies": {
 		"benchmark": "^2.1.4",
-		"db-stations": "^1.23.0",
+		"db-stations": "^2.0.0",
 		"lodash.sortby": "^4.7.0",
 		"sandboxed-module": "^2.0.3",
+		"synchronous-autocomplete": "^1.0.0",
 		"tap-min": "^1.2.2",
 		"tape": "^4.8.0"
 	},

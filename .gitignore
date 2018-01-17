@@ -5,6 +5,8 @@ Thumbs.db
 node_modules
 npm-debug.log
 
-stations.json
+original-ids.json
 tokens.json
 scores.json
+weights.json
+nr-of-tokens.json
