@@ -1,7 +1,7 @@
 {
 	"name": "db-stations-autocomplete",
 	"description": "Search for stations of DB.",
-	"version": "1.0.1",
+	"version": "2.0.0",
 	"main": "index.js",
 	"files": [
 		"index.js",
