@@ -29,7 +29,7 @@
 		"node": ">=6"
 	},
 	"dependencies": {
-		"synchronous-autocomplete": "^1.0.0",
+		"synchronous-autocomplete": "^2.0.0",
 		"tokenize-db-station-name": "^1.0.0"
 	},
 	"devDependencies": {

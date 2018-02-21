@@ -18,19 +18,11 @@ const writeJSON = (file, data, cb) => {
 
 console.info('Collecting search items.')
 
-// we map the IDs to get smaller file sizes
-const originalIds = Object.create(null)
-let currentId = 0
-
 const items = []
-
 getStations()
 .on('data', (station) => {
-	const newId = (currentId++).toString(36)
-	originalIds[newId] = station.id
-
 	items.push({
-		id: newId,
+		id: station.id,
 		name: station.name,
 		weight: station.weight
 	})
@@ -38,14 +30,14 @@ getStations()
 .once('end', () => {
 	console.info('Computing a search index.')
 
-	const {tokens, scores, weights, nrOfTokens} = build(tokenize, items)
+	const {tokens, scores, weights, nrOfTokens, originalIds} = build(tokenize, items)
 
 	console.info('Writing the index to disk.')
 
-	writeJSON('original-ids.json', originalIds, showError)
 	writeJSON('tokens.json', tokens, showError)
 	writeJSON('scores.json', scores, showError)
 	writeJSON('weights.json', weights, showError)
 	writeJSON('nr-of-tokens.json', nrOfTokens, showError)
+	writeJSON('original-ids.json', originalIds, showError)
 })
 .once('error', showError)
