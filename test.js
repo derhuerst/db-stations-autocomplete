@@ -43,5 +43,9 @@ test('gives reasonable results', (t) => {
 	t.ok(r3)
 	t.equal((r3 || {}).id, '8000191') // Karlsruhe
 
+	const r4 = autocomplete('Wedding', 1)[0]
+	t.ok(r4)
+	t.equal((r4 || {}).id, '8089131') // Berlin Wedding
+
 	t.end()
 })
