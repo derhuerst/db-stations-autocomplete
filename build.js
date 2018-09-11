@@ -2,7 +2,7 @@
 
 const fs = require('fs')
 const path = require('path')
-const getStations = require('db-stations')
+const getStations = require('db-hafas-stations')
 const build = require('synchronous-autocomplete/build')
 const tokenize = require('tokenize-db-station-name')
 
@@ -24,7 +24,7 @@ getStations()
 	items.push({
 		id: station.id,
 		name: station.name,
-		weight: station.weight
+		weight: station.weight || 1
 	})
 })
 .once('end', () => {

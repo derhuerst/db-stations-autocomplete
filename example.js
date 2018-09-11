@@ -1,6 +1,6 @@
 'use strict'
 
-const readStations = require('db-stations')
+const readStations = require('db-hafas-stations')
 const prompt = require('cli-autocomplete')
 
 const autocomplete = require('.')
@@ -8,12 +8,8 @@ const autocomplete = require('.')
 const pStations = new Promise((resolve, reject) => {
 	const res = Object.create(null)
 	readStations()
-	.on('data', (s) => {
-		res[s.id] = s
-	})
-	.once('end', () => {
-		resolve(res)
-	})
+	.on('data', s => res[s.id] = s)
+	.once('end', () => resolve(res))
 	.once('error', reject)
 })
 
@@ -25,12 +21,16 @@ const suggest = (input) => {
 
 		for (let result of results) {
 			const station = stationsById[result.id]
-			if (!station) continue
+			if (!station) {
+				console.error('unknown station', result)
+				continue
+			}
 
 			choices.push({
 				title: [
 					station.name,
 					'–',
+					'id:', result.id,
 					'score:', result.score.toFixed(3),
 					'relevance:', result.relevance.toFixed(3)
 				].join(' '),
