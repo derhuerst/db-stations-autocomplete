@@ -1,7 +1,7 @@
 {
 	"name": "db-stations-autocomplete",
 	"description": "Search for stations of DB.",
-	"version": "2.1.1",
+	"version": "2.2.0",
 	"main": "index.js",
 	"files": [
 		"index.js",
@@ -9,7 +9,8 @@
 		"tokens.json",
 		"scores.json",
 		"weights.json",
-		"nr-of-tokens.json"
+		"nr-of-tokens.json",
+		"example.js"
 	],
 	"keywords": [
 		"db",
@@ -17,7 +18,6 @@
 		"stations",
 		"autocomplete",
 		"search",
-		"berlin",
 		"public transport",
 		"open data"
 	],
