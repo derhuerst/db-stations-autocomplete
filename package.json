@@ -37,7 +37,7 @@
 		"cli-autocomplete": "^0.4.1",
 		"db-stations": "^2.2.0",
 		"lodash.sortby": "^4.7.0",
-		"tap-min": "^1.2.2",
+		"tap-min": "^2.0.0",
 		"tape": "^4.8.0"
 	},
 	"scripts": {
