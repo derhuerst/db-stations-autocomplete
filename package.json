@@ -30,7 +30,7 @@
 	},
 	"dependencies": {
 		"synchronous-autocomplete": "^2.0.0",
-		"tokenize-db-station-name": "^1.0.0"
+		"tokenize-db-station-name": "^2.0.0"
 	},
 	"devDependencies": {
 		"benchmark": "^2.1.4",
