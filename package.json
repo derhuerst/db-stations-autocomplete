@@ -38,7 +38,7 @@
 		"db-stations": "^2.2.0",
 		"lodash.sortby": "^4.7.0",
 		"tap-min": "^1.2.2",
-		"tape": "^4.8.0"
+		"tape": "^5.0.0"
 	},
 	"scripts": {
 		"build": "node ./build.js",
