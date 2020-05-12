@@ -1,49 +1,53 @@
 {
-	"name": "db-stations-autocomplete",
-	"description": "Search for stations of DB.",
-	"version": "2.2.0",
-	"main": "index.js",
-	"files": [
-		"index.js",
-		"original-ids.json",
-		"tokens.json",
-		"scores.json",
-		"weights.json",
-		"nr-of-tokens.json",
-		"example.js"
-	],
-	"keywords": [
-		"db",
-		"deutsche bahn",
-		"stations",
-		"autocomplete",
-		"search",
-		"public transport",
-		"open data"
-	],
-	"author": "Jannis R <mail@jannisr.de>",
-	"homepage": "https://github.com/derhuerst/db-stations-autocomplete",
-	"repository": "git://github.com/derhuerst/db-stations-autocomplete.git",
-	"license": "ISC",
-	"engines": {
-		"node": ">=6"
-	},
-	"dependencies": {
-		"synchronous-autocomplete": "^2.0.0",
-		"tokenize-db-station-name": "^1.0.0"
-	},
-	"devDependencies": {
-		"benchmark": "^2.1.4",
-		"cli-autocomplete": "^0.4.1",
-		"db-stations": "^2.2.0",
-		"lodash.sortby": "^4.7.0",
-		"tap-min": "^1.2.2",
-		"tape": "^5.0.0"
-	},
-	"scripts": {
-		"build": "node ./build.js",
-		"test": "node test.js | tap-min",
-		"benchmark": "node benchmark.js",
-		"prepublishOnly": "npm run build && npm test"
-	}
+  "name": "db-stations-autocomplete",
+  "description": "Search for stations of DB.",
+  "version": "2.2.0",
+  "main": "index.js",
+  "files": [
+    "index.js",
+    "original-ids.json",
+    "tokens.json",
+    "scores.json",
+    "weights.json",
+    "nr-of-tokens.json",
+    "example.js"
+  ],
+  "keywords": [
+    "db",
+    "deutsche bahn",
+    "stations",
+    "autocomplete",
+    "search",
+    "public transport",
+    "open data"
+  ],
+  "author": "Jannis R <mail@jannisr.de>",
+  "homepage": "https://github.com/derhuerst/db-stations-autocomplete",
+  "repository": "git://github.com/derhuerst/db-stations-autocomplete.git",
+  "license": "ISC",
+  "engines": {
+    "node": ">=6"
+  },
+  "dependencies": {
+    "synchronous-autocomplete": "^2.0.0",
+    "tokenize-db-station-name": "^1.0.0",
+    "snyk": "^1.320.2"
+  },
+  "devDependencies": {
+    "benchmark": "^2.1.4",
+    "cli-autocomplete": "^0.4.1",
+    "db-stations": "^2.2.0",
+    "lodash.sortby": "^4.7.0",
+    "tap-min": "^1.2.2",
+    "tape": "^5.0.0"
+  },
+  "scripts": {
+    "build": "node ./build.js",
+    "test": "node test.js | tap-min",
+    "benchmark": "node benchmark.js",
+    "prepublishOnly": "npm run build && npm test",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
+  },
+  "snyk": true
 }
