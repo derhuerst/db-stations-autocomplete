@@ -3,10 +3,11 @@
 *db-stations-autocomplete* provides a **stations search for [Deutsche Bahn](https://en.wikipedia.org/wiki/Deutsche_Bahn)**. Pulls its data from [`db-stations@4`](https://github.com/derhuerst/db-stations) (There's also [`db-hafas-stations-autocomplete`](https://github.com/derhuerst/db-hafas-stations-autocomplete), which pulls its data from [`db-hafas-stations`](https://github.com/derhuerst/db-hafas-stations)).
 
 [![npm version](https://img.shields.io/npm/v/db-stations-autocomplete.svg)](https://www.npmjs.com/package/db-stations-autocomplete)
-[![build status](https://img.shields.io/travis/derhuerst/db-stations-autocomplete.svg)](https://travis-ci.org/derhuerst/db-stations-autocomplete)
+[![build status](https://api.travis-ci.org/derhuerst/db-stations-autocomplete.svg?branch=master)](https://travis-ci.org/derhuerst/db-stations-autocomplete)
 ![ISC-licensed](https://img.shields.io/github/license/derhuerst/db-stations-autocomplete.svg)
-[![chat on Gitter](https://badges.gitter.im/derhuerst/vbb-rest.svg)](https://gitter.im/derhuerst)
-[![support me on Patreon](https://img.shields.io/badge/support%20me-on%20patreon-fa7664.svg)](https://patreon.com/derhuerst)
+![minimum Node.js version](https://img.shields.io/node/v/db-stations-autocomplete.svg)
+[![chat with me on Gitter](https://img.shields.io/badge/chat%20with%20me-on%20gitter-512e92.svg)](https://gitter.im/derhuerst)
+[![support me via GitHub Sponsors](https://img.shields.io/badge/support%20me-donate-fa7664.svg)](https://github.com/sponsors/derhuerst)
 
 
 ## Installing
