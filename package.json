@@ -26,18 +26,18 @@
 	"repository": "git://github.com/derhuerst/db-stations-autocomplete.git",
 	"license": "ISC",
 	"engines": {
-		"node": ">=6"
+		"node": ">=12"
 	},
 	"dependencies": {
 		"synchronous-autocomplete": "^2.0.0",
-		"tokenize-db-station-name": "^1.0.0"
+		"tokenize-db-station-name": "^2.2.2"
 	},
 	"devDependencies": {
 		"benchmark": "^2.1.4",
 		"cli-autocomplete": "^0.4.1",
-		"db-stations": "^2.2.0",
+		"db-stations": "^4.0.0",
 		"lodash.sortby": "^4.7.0",
-		"tap-min": "^1.2.2",
+		"tap-min": "^2.0.0",
 		"tape": "^5.0.0"
 	},
 	"scripts": {
