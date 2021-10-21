@@ -3,7 +3,6 @@
 *db-stations-autocomplete* provides a **stations search for [Deutsche Bahn](https://en.wikipedia.org/wiki/Deutsche_Bahn)**. Pulls its data from [`db-stations@4`](https://github.com/derhuerst/db-stations) (There's also [`db-hafas-stations-autocomplete`](https://github.com/derhuerst/db-hafas-stations-autocomplete), which pulls its data from [`db-hafas-stations`](https://github.com/derhuerst/db-hafas-stations)).
 
 [![npm version](https://img.shields.io/npm/v/db-stations-autocomplete.svg)](https://www.npmjs.com/package/db-stations-autocomplete)
-[![build status](https://api.travis-ci.org/derhuerst/db-stations-autocomplete.svg?branch=master)](https://travis-ci.org/derhuerst/db-stations-autocomplete)
 ![ISC-licensed](https://img.shields.io/github/license/derhuerst/db-stations-autocomplete.svg)
 ![minimum Node.js version](https://img.shields.io/node/v/db-stations-autocomplete.svg)
 [![chat with me on Gitter](https://img.shields.io/badge/chat%20with%20me-on%20gitter-512e92.svg)](https://gitter.im/derhuerst)
