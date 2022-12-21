@@ -32,9 +32,11 @@ test.skip('autocomplete limits the number of results', (t) => {
 })
 
 test('gives reasonable results', (t) => {
-	const r0 = autocomplete('Münch', 1)[0]
-	t.ok(r0)
-	t.equal((r0 || {}).id, '8004129') // München Hackerbrücke
+	const r0 = autocomplete('Münch', 3)
+	const münchenHbf = r0.find(({id}) => id === '8000261')
+	t.ok(münchenHbf, 'missing "München Hbf"')
+	const münchenOst = r0.find(({id}) => id === '8000262')
+	t.ok(münchenOst, 'missing "München Ost"')
 
 	const r1 = autocomplete('Berlin', 1)[0]
 	t.ok(r1)

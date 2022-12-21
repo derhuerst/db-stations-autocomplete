@@ -1,7 +1,7 @@
 {
 	"name": "db-stations-autocomplete",
 	"description": "Search for stations of DB.",
-	"version": "3.0.1",
+	"version": "3.0.2",
 	"main": "index.js",
 	"files": [
 		"index.js",
@@ -30,7 +30,7 @@
 	},
 	"dependencies": {
 		"synchronous-autocomplete": "^2.0.0",
-		"tokenize-db-station-name": "^2.2.2"
+		"tokenize-db-station-name": "^3.0.0"
 	},
 	"devDependencies": {
 		"benchmark": "^2.1.4",
