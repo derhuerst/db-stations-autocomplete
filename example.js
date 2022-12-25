@@ -3,45 +3,39 @@ import prompt from 'cli-autocomplete'
 
 import {autocomplete} from './index.js'
 
-const pStations = new Promise((resolve, reject) => {
-	const res = Object.create(null)
-	readStations()
-	.on('data', (s) => {
-		res[s.id] = s
-	})
-	.once('end', () => {
-		resolve(res)
-	})
-	.once('error', reject)
-})
+const stationsById = Object.create(null)
 
-const suggest = (input) => {
-	return pStations
-	.then((stationsById) => {
-		const results = autocomplete(input, 5)
-		const choices = []
+for await (const s of readStations()) {
+	stationsById[s.id] = s
+}
 
-		for (let result of results) {
-			const station = stationsById[result.id]
-			if (!station) continue
+const suggest = async (input) => {
+	const results = autocomplete(input, 5)
+	const choices = []
 
-			choices.push({
-				title: [
-					station.name,
-					'–',
-					'score:', result.score.toFixed(3),
-					'relevance:', result.relevance.toFixed(3)
-				].join(' '),
-				value: station.id
-			})
-		}
+	for (let result of results) {
+		const station = stationsById[result.id]
+		if (!station) continue
 
-		return choices
-	})
+		choices.push({
+			title: [
+				station.name,
+				'–',
+				'score:', result.score.toFixed(3),
+				'relevance:', result.relevance.toFixed(3),
+				'weight:', result.weight.toFixed(3),
+			].join(' '),
+			value: station.id
+		})
+	}
+
+	return choices
 }
 
 prompt('Type a station name!', suggest)
-.once('abort', () => {
-	process.exitCode = 1
+.once('submit', (id) => {
+	console.log(id, stationsById[id]?.name)
 })
-.once('submit', id => console.log(id))
+.once('abort', () => {
+	process.exit(1)
+})
