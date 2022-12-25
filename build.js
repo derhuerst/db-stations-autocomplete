@@ -1,44 +1,35 @@
 import {dirname, join as pathJoin} from 'node:path'
 import {fileURLToPath} from 'node:url'
-import {writeFile} from 'node:fs'
+import {writeFile} from 'node:fs/promises'
 import readStations from 'db-stations'
 import build from 'synchronous-autocomplete/build.js'
 import tokenize from 'tokenize-db-station-name'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 
-const showError = (err) => {
-	if (!err) return
-	console.error(err.stack)
-	process.exit(1)
-}
-
-const writeJSON = (file, data, cb) => {
-	writeFile(pathJoin(__dirname, file), JSON.stringify(data), cb)
+const writeJSON = async (file, data) => {
+	await writeFile(pathJoin(__dirname, file), JSON.stringify(data))
 }
 
 console.info('Collecting search items.')
 
 const items = []
-readStations()
-.on('data', (station) => {
+for await (const station of readStations()) {
 	items.push({
 		id: station.id,
 		name: station.name,
 		weight: station.weight
 	})
-})
-.once('end', () => {
-	console.info('Computing a search index.')
+}
 
-	const {tokens, scores, weights, nrOfTokens, originalIds} = build(tokenize, items)
+console.info('Computing a search index.')
 
-	console.info('Writing the index to disk.')
+const {tokens, scores, weights, nrOfTokens, originalIds} = build(tokenize, items)
 
-	writeJSON('tokens.json', tokens, showError)
-	writeJSON('scores.json', scores, showError)
-	writeJSON('weights.json', weights, showError)
-	writeJSON('nr-of-tokens.json', nrOfTokens, showError)
-	writeJSON('original-ids.json', originalIds, showError)
-})
-.once('error', showError)
+console.info('Writing the index to disk.')
+
+await writeJSON('tokens.json', tokens)
+await writeJSON('scores.json', scores)
+await writeJSON('weights.json', weights)
+await writeJSON('nr-of-tokens.json', nrOfTokens)
+await writeJSON('original-ids.json', originalIds)
