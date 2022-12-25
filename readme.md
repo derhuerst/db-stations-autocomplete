@@ -23,7 +23,8 @@ autocomplete(query, results = 3, fuzzy = false, completion = true)
 ```
 
 ```javascript
-const autocomplete = require('vbb-stations-autocomplete')
+import {autocomplete} from 'db-stations-autocomplete'
+
 autocomplete('Münch', 3)
 ```
 

@@ -1,8 +1,7 @@
-'use strict'
+import _benchmark from 'benchmark'
+const {Suite} = _benchmark
 
-const {Suite} = require('benchmark')
-
-const autocomplete = require('.')
+import {autocomplete} from './index.js'
 
 new Suite()
 

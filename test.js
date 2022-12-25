@@ -1,9 +1,7 @@
-'use strict'
+import test from 'tape'
+import sortBy from 'lodash/sortBy.js'
 
-const test = require('tape')
-const sortBy = require('lodash/sortBy')
-
-const autocomplete = require('.')
+import {autocomplete} from './index.js'
 
 test('autocomplete returns an array', (t) => {
 	t.plan(2)

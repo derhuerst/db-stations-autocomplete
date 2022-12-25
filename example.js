@@ -1,9 +1,7 @@
-'use strict'
+import readStations from 'db-stations'
+import prompt from 'cli-autocomplete'
 
-const readStations = require('db-stations')
-const prompt = require('cli-autocomplete')
-
-const autocomplete = require('.')
+import {autocomplete} from './index.js'
 
 const pStations = new Promise((resolve, reject) => {
 	const res = Object.create(null)

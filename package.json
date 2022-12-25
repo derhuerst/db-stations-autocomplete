@@ -2,6 +2,7 @@
 	"name": "db-stations-autocomplete",
 	"description": "Search for stations of DB.",
 	"version": "3.0.2",
+	"type": "module",
 	"main": "index.js",
 	"files": [
 		"index.js",
@@ -26,7 +27,7 @@
 	"repository": "git://github.com/derhuerst/db-stations-autocomplete.git",
 	"license": "ISC",
 	"engines": {
-		"node": ">=12"
+		"node": ">=18"
 	},
 	"dependencies": {
 		"synchronous-autocomplete": "^2.0.0",

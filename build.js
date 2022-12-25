@@ -1,10 +1,11 @@
-'use strict'
+import {dirname, join as pathJoin} from 'node:path'
+import {fileURLToPath} from 'node:url'
+import {writeFile} from 'node:fs'
+import readStations from 'db-stations'
+import build from 'synchronous-autocomplete/build.js'
+import tokenize from 'tokenize-db-station-name'
 
-const fs = require('fs')
-const path = require('path')
-const getStations = require('db-stations')
-const build = require('synchronous-autocomplete/build')
-const tokenize = require('tokenize-db-station-name')
+const __dirname = dirname(fileURLToPath(import.meta.url))
 
 const showError = (err) => {
 	if (!err) return
@@ -13,13 +14,13 @@ const showError = (err) => {
 }
 
 const writeJSON = (file, data, cb) => {
-	fs.writeFile(path.join(__dirname, file), JSON.stringify(data), cb)
+	writeFile(pathJoin(__dirname, file), JSON.stringify(data), cb)
 }
 
 console.info('Collecting search items.')
 
 const items = []
-getStations()
+readStations()
 .on('data', (station) => {
 	items.push({
 		id: station.id,
