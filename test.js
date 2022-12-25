@@ -1,7 +1,7 @@
 'use strict'
 
 const test = require('tape')
-const sortBy = require('lodash.sortby')
+const sortBy = require('lodash/sortBy')
 
 const autocomplete = require('.')
 

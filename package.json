@@ -36,7 +36,7 @@
 		"benchmark": "^2.1.4",
 		"cli-autocomplete": "^0.4.1",
 		"db-stations": "^4.0.0",
-		"lodash.sortby": "^4.7.0",
+		"lodash": "^4.17.21",
 		"tap-min": "^2.0.0",
 		"tape": "^5.0.0"
 	},
