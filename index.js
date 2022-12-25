@@ -22,5 +22,6 @@ const index = {
 const autocomplete = createAutocomplete(index, tokenize)
 
 export {
+	index,
 	autocomplete,
 }
