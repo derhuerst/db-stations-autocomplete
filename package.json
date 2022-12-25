@@ -37,14 +37,16 @@
 		"benchmark": "^2.1.4",
 		"cli-autocomplete": "^0.4.1",
 		"db-stations": "^4.0.0",
+		"eslint": "^8.30.0",
 		"lodash": "^4.17.21",
 		"tap-min": "^2.0.0",
 		"tape": "^5.0.0"
 	},
 	"scripts": {
+		"lint": "eslint .",
 		"build": "node ./build.js",
 		"test": "node test.js | tap-min",
 		"benchmark": "node benchmark.js",
-		"prepublishOnly": "npm run build && npm test"
+		"prepublishOnly": "npm run lint && npm run build && npm test"
 	}
 }

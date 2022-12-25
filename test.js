@@ -38,15 +38,15 @@ test('gives reasonable results', (t) => {
 
 	const r1 = autocomplete('Berlin', 1)[0]
 	t.ok(r1)
-	t.equal((r1 || {}).id, '8011102') // Berlin Gesundbrunnen
+	t.equal((r1 || {}).id, '8011102') // Berlin Gesundbrunnen
 
 	const r3 = autocomplete('Karlsruhe', 1, true, false)[0]
 	t.ok(r3)
-	t.equal((r3 || {}).id, '8000191') // Karlsruhe
+	t.equal((r3 || {}).id, '8000191') // Karlsruhe
 
 	const r4 = autocomplete('Wedding', 1)[0]
 	t.ok(r4)
-	t.equal((r4 || {}).id, '8089131') // Berlin Wedding
+	t.equal((r4 || {}).id, '8089131') // Berlin Wedding
 
 	t.end()
 })
