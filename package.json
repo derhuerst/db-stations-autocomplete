@@ -30,13 +30,13 @@
 		"node": ">=18"
 	},
 	"dependencies": {
-		"synchronous-autocomplete": "^2.0.0",
+		"synchronous-autocomplete": "^3.0.0",
 		"tokenize-db-station-name": "^3.0.0"
 	},
 	"devDependencies": {
 		"benchmark": "^2.1.4",
 		"cli-autocomplete": "^0.4.1",
-		"db-stations": "^4.0.0",
+		"db-stations": "^5.0.0",
 		"eslint": "^8.30.0",
 		"lodash": "^4.17.21",
 		"tap-min": "^2.0.0",

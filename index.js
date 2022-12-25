@@ -3,7 +3,7 @@
 import {createRequire} from 'module'
 const require = createRequire(import.meta.url)
 
-import createAutocomplete from 'synchronous-autocomplete'
+import {createAutocomplete} from 'synchronous-autocomplete'
 import tokenize from 'tokenize-db-station-name'
 
 const tokens = require('./tokens.json')
@@ -12,14 +12,14 @@ const weights = require('./weights.json')
 const nrOfTokens = require('./nr-of-tokens.json')
 const originalIds = require('./original-ids.json')
 
-const autocomplete = createAutocomplete(
+const index = {
 	tokens,
 	scores,
 	weights,
 	nrOfTokens,
 	originalIds,
-	tokenize,
-)
+}
+const autocomplete = createAutocomplete(index, tokenize)
 
 export {
 	autocomplete,

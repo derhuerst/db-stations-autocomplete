@@ -1,8 +1,8 @@
 import {dirname, join as pathJoin} from 'node:path'
 import {fileURLToPath} from 'node:url'
 import {writeFile} from 'node:fs/promises'
-import readStations from 'db-stations'
-import build from 'synchronous-autocomplete/build.js'
+import {readStations} from 'db-stations'
+import {buildIndex} from 'synchronous-autocomplete/build.js'
 import tokenize from 'tokenize-db-station-name'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
@@ -24,7 +24,7 @@ for await (const station of readStations()) {
 
 console.info('Computing a search index.')
 
-const {tokens, scores, weights, nrOfTokens, originalIds} = build(tokenize, items)
+const {tokens, scores, weights, nrOfTokens, originalIds} = buildIndex(tokenize, items)
 
 console.info('Writing the index to disk.')
 

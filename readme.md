@@ -49,20 +49,20 @@ This returns stations in a reduced form of the [*Friendly Public Transport Forma
 } ]
 ```
 
-If you set `fuzzy` to `true`, words with a [Levenshtein distance](https://en.wikipedia.org/wiki/Levenshtein_distance) `<= 3` will be taken into account. This is a lot slower though:
+If you set `fuzzy` to `true`, words with a [Levenshtein distance](https://en.wikipedia.org/wiki/Levenshtein_distance) `<= 3` will be taken into account. This is a lot slower though (Apple M1, Node v19.1):
 
 test | performance
 -----|------------
-non-fuzzy – `berlin charlottenburg` | 626 ops/sec
-fuzzy – `berlin charlottenbrug` (note the typo) | 108 ops/sec
+non-fuzzy – `berlin charlottenburg` | 704 ops/sec
+fuzzy – `berlin charlottenbrug` (note the typo) | 204 ops/sec
 
 
 Setting `completion` to `false` speeds things up:
 
 test | performance
 -----|------------
-completion – `Münc Hbf` | 592 ops/sec
-no completion – `Münc Hbf` | 12635 ops/sec
+completion – `Münc Hbf` | 477 ops/sec
+no completion – `Münc Hbf` | 2115 ops/sec
 
 
 ## Contributing

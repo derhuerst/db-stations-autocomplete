@@ -1,4 +1,4 @@
-import readStations from 'db-stations'
+import {readStations} from 'db-stations'
 import prompt from 'cli-autocomplete'
 
 import {autocomplete} from './index.js'
