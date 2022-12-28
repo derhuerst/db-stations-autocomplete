@@ -36,9 +36,9 @@ test('gives reasonable results', (t) => {
 	const münchenOst = r0.find(({id}) => id === '8000262')
 	t.ok(münchenOst, 'missing "München Ost"')
 
-	const r1 = autocomplete('Berlin', 1)[0]
-	t.ok(r1)
-	t.equal((r1 || {}).id, '8011102') // Berlin Gesundbrunnen
+	const r1 = autocomplete('Berlin', 3)
+	const berlinGesundbrunnen = r1.find(({id}) => id === '8011102')
+	t.ok(berlinGesundbrunnen, 'missing "Berlin Gesundbrunnen"')
 
 	const r3 = autocomplete('Karlsruhe', 1, true, false)[0]
 	t.ok(r3)
